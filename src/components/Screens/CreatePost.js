@@ -3,7 +3,7 @@ import M from "materialize-css";
 import { useHistory } from "react-router-dom";
 
 import Cookie from "js-cookie";
-import { MY_API } from "../../config";
+import { CLOUNDINARY_API, MY_API } from "../../config";
 
 export const CreatePost = () => {
   const history = useHistory();
@@ -17,7 +17,7 @@ export const CreatePost = () => {
     formData.append("file", image);
     formData.append("upload_preset", "instagram-clone");
     formData.append("cloud_name", "bravebits");
-    fetch("https://api.cloudinary.com/v1_1/vandonvn/image/upload", {
+    fetch(`${CLOUNDINARY_API}`, {
       method: "post",
       body: formData,
     })

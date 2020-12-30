@@ -14,7 +14,7 @@ export const Login = () => {
     email: "",
     password: "",
   });
-
+  console.log(user);
   const handleChange = (e) => {
     setUser({
       ...user,
