@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import M from "materialize-css";
 import { useHistory } from "react-router-dom";
+
 import Cookie from "js-cookie";
+import { MY_API } from "../../config";
 
 export const CreatePost = () => {
   const history = useHistory();
@@ -27,7 +29,7 @@ export const CreatePost = () => {
 
   const handleSubmit = () => {
     if (url)
-      fetch("/blog/create", {
+      fetch(`${MY_API}/blog/create`, {
         method: "post",
         headers: {
           "Content-Type": "application/json",

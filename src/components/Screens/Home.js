@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { UserContext } from "../../App";
 import Cookie from "js-cookie";
 import { Link } from "react-router-dom";
+import { MY_API } from "../../config";
 
 export const Home = () => {
   const [data, setData] = useState([]);
@@ -9,7 +10,7 @@ export const Home = () => {
   // console.log(state);
 
   useEffect(() => {
-    fetch("/blog", {
+    fetch(`${MY_API}/blog`, {
       method: "get",
       headers: {
         "Content-Type": "application/json",
@@ -23,7 +24,7 @@ export const Home = () => {
       });
   }, []);
   const likePost = (id) => {
-    fetch("/blog/like", {
+    fetch(`${MY_API}/blog/like`, {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -50,7 +51,7 @@ export const Home = () => {
       });
   };
   const unlikePost = (id) => {
-    fetch("/blog/unlike", {
+    fetch(`${MY_API}/blog/unlike`, {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -78,7 +79,7 @@ export const Home = () => {
   };
 
   const makeComment = (text, postId) => {
-    fetch("/blog/comment", {
+    fetch(`${MY_API}/blog/comment`, {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -105,7 +106,7 @@ export const Home = () => {
       });
   };
   const deletePost = (postid) => {
-    fetch(`/blog/deletepost/${postid}`, {
+    fetch(`${MY_API}/blog/deletepost/${postid}`, {
       method: "delete",
       headers: {
         Authorization: "Thu Pham" + Cookie.get("token"),

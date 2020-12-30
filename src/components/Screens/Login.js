@@ -3,6 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import { UserContext } from "../../App";
 import Cookie from "js-cookie";
 import M from "materialize-css";
+import { MY_API } from "../../config";
 
 export const Login = () => {
   const { state, dispatch } = useContext(UserContext);
@@ -26,7 +27,7 @@ export const Login = () => {
   //name: e.target.name is name of input
   const postData = () => {
     const { email, password } = user;
-    fetch("/auth/login", {
+    fetch(`${MY_API}/auth/login`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",

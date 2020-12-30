@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import M from "materialize-css";
+import { MY_API } from "../../config";
 
 export const Register = () => {
   const [user, setUser] = useState({
@@ -21,7 +22,7 @@ export const Register = () => {
 
   const postData = () => {
     const { name, email, password } = user;
-    fetch("/auth/register", {
+    fetch(`${MY_API}/auth/register`, {
       method: "post",
       headers: {
         "Content-Type": "application/json",

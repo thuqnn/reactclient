@@ -4,6 +4,8 @@ import Cookie from "js-cookie";
 
 import { UserContext } from "../../App";
 
+import { MY_API } from "../../config";
+
 export const UserProfile = () => {
   const [userProfile, setProfile] = useState(null);
   const { state, dispatch } = useContext(UserContext);
@@ -14,7 +16,7 @@ export const UserProfile = () => {
   );
 
   useEffect(() => {
-    fetch(`/users/${id}`, {
+    fetch(`${MY_API}/users/${id}`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: "Thu Pham" + Cookie.get("token"),
@@ -28,7 +30,7 @@ export const UserProfile = () => {
   }, [id]);
 
   const followUser = () => {
-    fetch("/users/follow", {
+    fetch(`${MY_API}/users/follow`, {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -59,7 +61,7 @@ export const UserProfile = () => {
   };
 
   const unfollowUser = () => {
-    fetch("/users/unfollow", {
+    fetch(`${MY_API}/users/unfollow`, {
       method: "put",
       headers: {
         "Content-Type": "application/json",

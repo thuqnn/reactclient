@@ -1,11 +1,5 @@
 import "./App.css";
-import React, {
-  useEffect,
-  createContext,
-  useReducer,
-  useContext,
-  useState,
-} from "react";
+import React, { useEffect, createContext, useReducer, useContext } from "react";
 import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
 import Cookie from "js-cookie";
 

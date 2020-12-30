@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useContext } from "react";
 import Cookie from "js-cookie";
-
 import { UserContext } from "../../App";
+import { MY_API } from "../../config";
 
 export const Profile = () => {
   const [mypics, setPics] = useState([]);
   const { state, dispatch } = useContext(UserContext);
   useEffect(() => {
-    fetch("/blog/userposts", {
+    fetch(`${MY_API}/blog/userposts`, {
       method: "get",
       headers: {
         Authorization: "Thu Pham" + Cookie.get("token"),
