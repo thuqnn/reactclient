@@ -17,7 +17,7 @@ export const CreatePost = () => {
     formData.append("file", image);
     formData.append("upload_preset", "instagram-clone");
     formData.append("cloud_name", "bravebits");
-    fetch(`${CLOUNDINARY_API}`, {
+    fetch("https://api.cloudinary.com/v1_1/vandonvn/image/upload/", {
       method: "post",
       body: formData,
     })
