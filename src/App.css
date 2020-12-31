@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap");
+.container {
+  max-width: 860px;
+}
+.home.container {
+  max-width: 800px;
+}
 .content {
   padding: 20px;
 }
@@ -23,6 +29,14 @@
 .header .active {
   color: #2c7613;
 }
+img {
+  max-width: 100%;
+  width: 100%;
+}
+
+input {
+  width: 100%;
+}
 #reg-form {
   display: flex;
   flex-direction: column;
@@ -43,7 +57,12 @@
 h2 {
   font-family: "Grand Hotel", cursive;
   font-size: 28px;
+  text-align: center;
 }
+.navbar-toggler-icon {
+  width: auto;
+}
+
 .mycard {
   margin: 10px auto;
 }
@@ -53,14 +72,7 @@ h2 {
   max-width: 400px;
   margin: auto;
 }
-img {
-  max-width: 100%;
-  width: 100%;
-}
 
-input {
-  width: 100%;
-}
 .create-post {
   max-width: 700px;
   margin: auto;
@@ -83,25 +95,11 @@ input {
 }
 .card h5 {
   margin: 0;
-  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   align-content: center;
-}
-i.fa.fa-thumbs-up,
-i.fa.fa-thumbs-down {
-  margin-left: 10px;
-  font-size: 16px;
-}
-.navbar-toggler-icon {
-  width: auto;
-}
-.container {
-  max-width: 860px;
-}
-.home.container {
-  max-width: 800px;
+  padding: 20px 10px;
 }
 .card-item-image {
   max-height: 400px;
@@ -116,5 +114,14 @@ i.fa.fa-thumbs-down {
   padding: 0;
 }
 .card .card-text {
+  font-size: 16px;
+}
+.card.create-post h2 {
+  padding-top: 10px;
+}
+
+i.fa.fa-thumbs-up,
+i.fa.fa-thumbs-down {
+  margin-left: 10px;
   font-size: 16px;
 }

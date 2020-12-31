@@ -131,7 +131,7 @@ export const SubUserPost = () => {
           // console.log(item);
           return (
             <div className="card" key={item._id}>
-              <h5 style={{ padding: "5px" }}>
+              <h5>
                 <Link
                   to={
                     item.postedBy._id !== state.id
