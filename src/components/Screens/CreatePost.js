@@ -3,7 +3,7 @@ import M from "materialize-css";
 import { useHistory } from "react-router-dom";
 
 import Cookie from "js-cookie";
-import { CLOUNDINARY_API, MY_API } from "../../config";
+import { MY_API } from "../../config";
 
 export const CreatePost = () => {
   const history = useHistory();

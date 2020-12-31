@@ -63,7 +63,7 @@ export const Header = () => {
           Instagram
         </Link>
         <button
-          className="navbar-toggler"
+          className="navbar-toggler fa fa-bars"
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"

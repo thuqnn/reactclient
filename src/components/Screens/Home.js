@@ -19,7 +19,7 @@ export const Home = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        // console.log(result);
+        console.log(result);
         setData(result);
       });
   }, []);
@@ -36,7 +36,7 @@ export const Home = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        // console.log(result);
+        console.log(result);
         const newData = data.map((item) => {
           if (item._id === result._id) {
             return result;
@@ -63,7 +63,7 @@ export const Home = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        //   console.log(result)
+        console.log(result);
         const newData = data.map((item) => {
           if (item._id === result._id) {
             return result;
@@ -92,6 +92,7 @@ export const Home = () => {
     })
       .then((res) => res.json())
       .then((result) => {
+        console.log(data);
         const newData = data.map((item) => {
           if (item._id === result._id) {
             return result;
@@ -128,10 +129,10 @@ export const Home = () => {
     <div className="home container">
       <div className="row">
         {data.map((item) => {
-          // console.log(item);
+          //console.log(data);
           return (
             <div className="card" key={item._id}>
-              <h5 style={{ padding: "5px" }}>
+              <h5>
                 <Link
                   to={
                     item.postedBy._id !== state.id
@@ -151,27 +152,32 @@ export const Home = () => {
                   ></i>
                 )}
               </h5>
-              <img className="card-img-top" src={item.image} alt={item.title} />
+              <div className="card-item-image">
+                <img
+                  className="card-img-top"
+                  src={item.image}
+                  alt={item.title}
+                />
+              </div>
               <div className="card-body">
                 <i className="fa fa-heart" style={{ color: "red" }}></i>
                 {item.likes.includes(state.id) ? (
                   <i
                     className="fa fa-thumbs-down"
-                    aria-hidden="true"
                     onClick={() => unlikePost(item._id)}
                   ></i>
                 ) : (
                   <i
                     className="fa fa-thumbs-up"
-                    aria-hidden="true"
                     onClick={() => likePost(item._id)}
                   ></i>
                 )}
 
                 <h6>{item.likes.length} Likes</h6>
-                <h6 className="card-title">{item.title}</h6>
+                <h5 className="card-title">{item.title}</h5>
                 <p className="card-text">{item.description}</p>
                 {item.comments.map((record) => {
+                  // console.log(record);
                   return (
                     <h6 key={record._id}>
                       <span style={{ fontWeight: "500" }}>
